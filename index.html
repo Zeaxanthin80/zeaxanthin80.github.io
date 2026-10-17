@@ -1,43 +1,293 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zeaxanthin80 · GitHub Portfolio</title>
+    <title>Zeaxanthin80 · AI & Software Portfolio</title>
     <meta
       name="description"
-      content="A modern, minimal portfolio sourced from Zeaxanthin80's GitHub repositories and tech stack."
+      content="Neo-retro portfolio of Zeaxanthin80 — AI agents, intelligent systems, and software projects."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <main class="shell">
+    <!-- Background Grid & Glow Effects -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <div class="shell">
+      <!-- Navigation Bar -->
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="#" class="nav-brand">
+          <span class="brand-dot"></span>
+          <span class="brand-text">ZEAXANTHIN80</span>
+        </a>
+        <div class="nav-links">
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#tech-stack" class="nav-link">Stack</a>
+          <a href="https://github.com/Zeaxanthin80" target="_blank" rel="noreferrer" class="nav-link nav-link--ext">
+            GitHub
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.5 2.5H9.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme (Light / Dark)">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
       <header class="hero">
-        <p class="eyebrow">ZEAXANTHIN80</p>
-        <h1>Building modern products across AI, web, and mobile.</h1>
-        <p>
-          This page auto-summarizes repositories and tech signals from GitHub, with optional Vercel-backed API support.
-        </p>
-        <div class="actions">
-          <a class="button" href="https://github.com/Zeaxanthin80" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button button--ghost" href="#projects">Projects</a>
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-pulse"></span>
+            <span class="status-text">SYS_STATUS: AGENTS_ONLINE</span>
+          </div>
+          <h1 class="hero-title">
+            Engineering <span class="gradient-text">Autonomous Agents</span> & Intelligent Systems.
+          </h1>
+          <p class="hero-subtitle">
+            Building modern products across AI speech, vision, natural language processing, and web architectures. Powered by custom GitHub repos & modern backends.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#projects">
+              <span>View Repositories</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33331 8H12.6666" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn btn--secondary" href="https://github.com/Zeaxanthin80" target="_blank" rel="noreferrer">
+              <span>GitHub Profile</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive SVG Robot Illustration matching reference style -->
+        <div class="hero-illustration" aria-hidden="true">
+          <div class="robot-stage" id="robot-stage">
+            <svg
+              class="robot-svg"
+              viewBox="0 0 600 520"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Ambient Shadow on Floor -->
+              <ellipse cx="210" cy="485" rx="130" ry="18" class="svg-shadow" />
+              <ellipse cx="410" cy="480" rx="90" ry="16" class="svg-shadow" />
+
+              <!-- DESK & CRT WORKSTATION -->
+              <g class="crt-workstation">
+                <!-- Table legs -->
+                <path d="M120 230 L110 470" class="stroke-dark" stroke-width="12" stroke-linecap="round" />
+                <path d="M180 230 L170 470" class="stroke-dark" stroke-width="10" stroke-linecap="round" />
+                <path d="M280 230 L270 470" class="stroke-dark" stroke-width="12" stroke-linecap="round" />
+                <path d="M330 230 L320 470" class="stroke-dark" stroke-width="10" stroke-linecap="round" />
+                
+                <!-- Table top -->
+                <rect x="80" y="215" width="280" height="20" rx="4" class="fill-desk stroke-dark" stroke-width="4" />
+
+                <!-- CRT Monitor Body -->
+                <rect x="110" y="70" width="190" height="135" rx="16" class="fill-crt-casing stroke-dark" stroke-width="5" />
+                <rect x="125" y="82" width="160" height="110" rx="10" class="fill-crt-bezel stroke-dark" stroke-width="4" />
+                <!-- CRT Screen Glass -->
+                <rect x="138" y="92" width="134" height="90" rx="8" class="fill-crt-screen stroke-dark" stroke-width="3" />
+                
+                <!-- Screen Animated Matrix Text / Code Lines -->
+                <g class="crt-matrix-code">
+                  <line x1="148" y1="108" x2="220" y2="108" class="crt-code-line line-1" stroke-width="4" stroke-linecap="round" />
+                  <line x1="148" y1="120" x2="250" y2="120" class="crt-code-line line-2" stroke-width="4" stroke-linecap="round" />
+                  <line x1="148" y1="132" x2="195" y2="132" class="crt-code-line line-3" stroke-width="4" stroke-linecap="round" />
+                  <line x1="148" y1="144" x2="235" y2="144" class="crt-code-line line-4" stroke-width="4" stroke-linecap="round" />
+                  <line x1="148" y1="156" x2="210" y2="156" class="crt-code-line line-5" stroke-width="4" stroke-linecap="round" />
+                  <line x1="148" y1="168" x2="175" y2="168" class="crt-code-line line-6" stroke-width="4" stroke-linecap="round" />
+                </g>
+
+                <!-- CRT Vents & Knobs -->
+                <line x1="120" y1="100" x2="120" y2="150" class="stroke-dark" stroke-width="3" />
+                <line x1="116" y1="100" x2="116" y2="150" class="stroke-dark" stroke-width="3" />
+                <circle cx="265" cy="192" r="4" class="fill-red-btn" />
+                <circle cx="250" cy="192" r="3" class="stroke-dark" stroke-width="2" />
+
+                <!-- Keyboard -->
+                <path d="M170 202 L280 202 L290 215 L160 215 Z" class="fill-keyboard stroke-dark" stroke-width="3" />
+              </g>
+
+              <!-- POWER CABLES -->
+              <path d="M130 190 Q90 280 150 360 T220 490 L270 490" class="stroke-cable" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M140 215 Q100 320 180 410 T250 500 L300 500" class="stroke-cable" stroke-width="4" stroke-linecap="round" fill="none" />
+              <!-- Plug on floor -->
+              <rect x="270" y="482" width="24" height="14" rx="3" class="fill-desk stroke-dark" stroke-width="3" />
+              <line x1="294" y1="486" x2="304" y2="486" class="stroke-dark" stroke-width="3" />
+              <line x1="294" y1="492" x2="304" y2="492" class="stroke-dark" stroke-width="3" />
+
+              <!-- ROBOT ON STOOL -->
+              <g class="robot-character">
+                <!-- Stool -->
+                <ellipse cx="410" cy="350" rx="45" ry="12" class="fill-desk stroke-dark" stroke-width="4" />
+                <line x1="380" y1="350" x2="360" y2="470" class="stroke-dark" stroke-width="7" stroke-linecap="round" />
+                <line x1="410" y1="350" x2="410" y2="475" class="stroke-dark" stroke-width="7" stroke-linecap="round" />
+                <line x1="440" y1="350" x2="460" y2="470" class="stroke-dark" stroke-width="7" stroke-linecap="round" />
+
+                <!-- Robot Legs -->
+                <!-- Left Leg -->
+                <rect x="365" y="320" width="22" height="40" rx="10" class="fill-robot-limb stroke-dark" stroke-width="4" />
+                <rect x="360" y="355" width="28" height="45" rx="12" class="fill-robot-body stroke-dark" stroke-width="4" />
+                <!-- Right Leg -->
+                <rect x="425" y="320" width="22" height="40" rx="10" class="fill-robot-limb stroke-dark" stroke-width="4" />
+                <rect x="422" y="355" width="28" height="45" rx="12" class="fill-robot-body stroke-dark" stroke-width="4" />
+
+                <!-- Robot Torso Body -->
+                <rect x="355" y="240" width="105" height="95" rx="24" class="fill-robot-body stroke-dark" stroke-width="5" />
+                <!-- Chest Panel -->
+                <rect x="373" y="258" width="70" height="52" rx="10" class="fill-chest-panel stroke-dark" stroke-width="3" />
+                <!-- Buttons & Indicators -->
+                <circle cx="388" cy="272" r="5" class="fill-blue-btn" />
+                <circle cx="406" cy="272" r="5" class="fill-red-btn" />
+                <rect x="385" y="285" width="46" height="6" rx="3" class="fill-meter-bg" />
+                <rect x="385" y="285" width="28" height="6" rx="3" class="fill-cyan-glow" />
+                <!-- Vent lines on chest -->
+                <line x1="422" y1="298" x2="435" y2="298" class="stroke-dark" stroke-width="2" />
+                <line x1="422" y1="302" x2="435" y2="302" class="stroke-dark" stroke-width="2" />
+                <line x1="422" y1="306" x2="435" y2="306" class="stroke-dark" stroke-width="2" />
+
+                <!-- Arms -->
+                <!-- Left Arm -->
+                <g class="robot-arm-left">
+                  <circle cx="348" cy="265" r="14" class="fill-robot-limb stroke-dark" stroke-width="4" />
+                  <path d="M342 275 C330 300 340 330 360 335" class="stroke-dark fill-robot-limb" stroke-width="12" stroke-linecap="round" />
+                  <circle cx="362" cy="336" r="8" class="fill-robot-limb stroke-dark" stroke-width="3" />
+                </g>
+                <!-- Right Arm -->
+                <g class="robot-arm-right">
+                  <circle cx="466" cy="265" r="14" class="fill-robot-limb stroke-dark" stroke-width="4" />
+                  <path d="M472 275 C485 300 475 330 455 335" class="stroke-dark fill-robot-limb" stroke-width="12" stroke-linecap="round" />
+                  <circle cx="453" cy="336" r="8" class="fill-robot-limb stroke-dark" stroke-width="3" />
+                </g>
+
+                <!-- Neck -->
+                <rect x="390" y="225" width="35" height="20" rx="6" class="fill-robot-limb stroke-dark" stroke-width="4" />
+
+                <!-- Robot Head Group (for floating & parallax) -->
+                <g class="robot-head-group">
+                  <!-- Ear Knobs -->
+                  <rect x="330" y="152" width="16" height="42" rx="6" class="fill-robot-limb stroke-dark" stroke-width="4" />
+                  <rect x="469" y="152" width="16" height="42" rx="6" class="fill-robot-limb stroke-dark" stroke-width="4" />
+
+                  <!-- Main Head Shell -->
+                  <rect x="340" y="120" width="135" height="110" rx="36" class="fill-robot-body stroke-dark" stroke-width="5" />
+
+                  <!-- Visor Screen -->
+                  <rect x="355" y="132" width="105" height="84" rx="24" class="fill-robot-visor stroke-dark" stroke-width="4" />
+
+                  <!-- Eyes Container (Interactive) -->
+                  <g class="robot-eyes" id="robot-eyes">
+                    <!-- Left Eye Outer Glow & Inner Iris -->
+                    <circle cx="383" cy="174" r="17" class="eye-outer" />
+                    <circle cx="383" cy="174" r="11" class="eye-pupil left-pupil" />
+                    <circle cx="380" cy="170" r="4" fill="#FFFFFF" opacity="0.8" />
+
+                    <!-- Right Eye Outer Glow & Inner Iris -->
+                    <circle cx="432" cy="174" r="17" class="eye-outer" />
+                    <circle cx="432" cy="174" r="11" class="eye-pupil right-pupil" />
+                    <circle cx="429" cy="170" r="4" fill="#FFFFFF" opacity="0.8" />
+                  </g>
+                </g>
+              </g>
+
+              <!-- Floating Agent Tag Badge -->
+              <g class="floating-badge">
+                <rect x="360" y="50" width="180" height="34" rx="8" class="fill-badge-bg stroke-cyan" stroke-width="1.5" />
+                <circle cx="378" cy="67" r="4" class="fill-cyan-glow" />
+                <text x="390" y="71" class="badge-text">AGENT-01 // ACTIVE</text>
+              </g>
+            </svg>
+          </div>
         </div>
       </header>
 
-      <section>
-        <h2>Tech Stack</h2>
-        <div id="tech-stack" class="chips" aria-live="polite"></div>
+      <!-- Seamless Agent Crew Marquee -->
+      <section class="marquee-section" aria-label="Agent Capabilities Ticker">
+        <div class="marquee-track">
+          <div class="marquee-content">
+            <span class="marquee-item"><span class="m-icon">⚡</span> REPO_BOT_v2</span>
+            <span class="marquee-item"><span class="m-icon">🔍</span> CODE_INDEXER</span>
+            <span class="marquee-item"><span class="m-icon">🗣️</span> ELEVENLABS_TTS</span>
+            <span class="marquee-item"><span class="m-icon">🤖</span> APPEALMATE</span>
+            <span class="marquee-item"><span class="m-icon">💬</span> VOICE_AGENT</span>
+            <span class="marquee-item"><span class="m-icon">👁️</span> VISION_EVAL</span>
+            <span class="marquee-item"><span class="m-icon">⚡</span> REPO_BOT_v2</span>
+            <span class="marquee-item"><span class="m-icon">🔍</span> CODE_INDEXER</span>
+            <span class="marquee-item"><span class="m-icon">🗣️</span> ELEVENLABS_TTS</span>
+            <span class="marquee-item"><span class="m-icon">🤖</span> APPEALMATE</span>
+            <span class="marquee-item"><span class="m-icon">💬</span> VOICE_AGENT</span>
+            <span class="marquee-item"><span class="m-icon">👁️</span> VISION_EVAL</span>
+          </div>
+        </div>
       </section>
 
-      <section id="projects">
-        <h2>Featured Repositories</h2>
-        <div id="projects-grid" class="grid" aria-live="polite"></div>
+      <!-- Tech Stack Section -->
+      <section id="tech-stack" class="section">
+        <div class="section-header">
+          <span class="section-tag">// SYSTEM_STACK</span>
+          <h2>Primary Tech Modules</h2>
+          <p>Technologies & languages active across GitHub repositories.</p>
+        </div>
+        <div id="tech-stack-grid" class="chips-grid" aria-live="polite">
+          <!-- Populated by JS -->
+          <div class="chip-skeleton">Loading stack modules...</div>
+        </div>
       </section>
 
+      <!-- Featured Repositories Section -->
+      <section id="projects" class="section">
+        <div class="section-header">
+          <span class="section-tag">// ACTIVE_REPOSITORIES</span>
+          <h2>Featured Repositories</h2>
+          <p>Auto-indexed public software projects, AI agents, and experimental tools.</p>
+        </div>
+        <div id="projects-grid" class="projects-grid" aria-live="polite">
+          <!-- Populated by JS -->
+          <div class="card-skeleton">Fetching repository signal from GitHub...</div>
+        </div>
+      </section>
+
+      <!-- Footer -->
       <footer class="footer">
-        <small>Frontend: GitHub Pages · Optional API: Vercel Serverless Function</small>
+        <div class="footer-content">
+          <div class="footer-brand">
+            <span class="brand-text">ZEAXANTHIN80</span>
+            <p>Building intelligent web & AI software with modern architectures.</p>
+          </div>
+          <div class="footer-meta">
+            <span class="terminal-text">HOST: GITHUB_PAGES · BACKEND: VERCEL</span>
+            <span class="copy-text">© <span id="year">2026</span> Zeaxanthin80</span>
+          </div>
+        </div>
       </footer>
-    </main>
+    </div>
 
     <script src="/script.js" defer></script>
   </body>
