@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeaxanthin80 · GitHub Portfolio</title>
+    <meta
+      name="description"
+      content="A modern, minimal portfolio sourced from Zeaxanthin80's GitHub repositories and tech stack."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">ZEAXANTHIN80</p>
+        <h1>Building modern products across AI, web, and mobile.</h1>
+        <p>
+          This page auto-summarizes repositories and tech signals from GitHub, with optional Vercel-backed API support.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/Zeaxanthin80" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button button--ghost" href="#projects">Projects</a>
+        </div>
+      </header>
+
+      <section>
+        <h2>Tech Stack</h2>
+        <div id="tech-stack" class="chips" aria-live="polite"></div>
+      </section>
+
+      <section id="projects">
+        <h2>Featured Repositories</h2>
+        <div id="projects-grid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <footer class="footer">
+        <small>Frontend: GitHub Pages · Optional API: Vercel Serverless Function</small>
+      </footer>
+    </main>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
